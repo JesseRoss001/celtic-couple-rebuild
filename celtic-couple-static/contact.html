@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Get in touch with The Celtic Couple for inquiries, collaborations, and more." />
+  <meta name="keywords"    content="Contact, Inquiries, Collaborations, The Celtic Couple" />
+  <meta name="author"      content="The Celtic Couple" />
+
+  <!-- Open-Graph -->
+  <meta property="og:title"       content="Contact Us – The Celtic Couple" />
+  <meta property="og:description" content="Reach out to Dave & Georgina for questions or partnerships." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://example.com/contact.html" />
+
+  <title>Contact Us – The Celtic Couple</title>
+
+  <!-- favicon, fonts, bootstrap, icons -->
+  <link rel="icon" href="images/favicon (1).ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Global site CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Inline contact-page tweaks (verbatim) -->
+  <style>
+    :root{--primary-color:#4B0D0D;--secondary-color:#fff;--hover-color:#DCCCE8;--accent-color:#DCCCE8;--ko-fi-color:#DCCCE8}
+    #contact{background:#f8f9fa;color:var(--primary-color)}
+    .contact-section{padding:60px 0}
+    .contact-section img{border-radius:8px}
+    .contact-section h1{font-size:36px;margin-bottom:30px;text-align:center}
+    .contact-section h3{font-size:28px;margin-bottom:15px}
+    .contact-section p{font-size:18px;line-height:1.6;margin-bottom:20px}
+    .btn-custom-danger{background:var(--primary-color)!important;color:var(--secondary-color)!important;border:none;font-size:18px;padding:10px 20px;transition:.3s}
+    .btn-custom-danger:hover{background:var(--accent-color)!important;color:var(--secondary-color)!important}
+    .contact-form{margin-top:30px}
+    .contact-form label{font-weight:500}
+    @media(max-width:768px){
+      .contact-section h1{font-size:28px}
+      .contact-section h3{font-size:24px}
+      .contact-section p{font-size:16px}
+      .contact-form button{font-size:16px;padding:8px 16px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ▸ NAVBAR (full) -->
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/celtic-couple-logo (1).jpg" class="logo me-2 border rounded" alt="The Celtic Couple logo" />
+        <span class="h5 mb-0 px-3 text-white d-none d-md-block">The Celtic Couple</span>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="navbar-toggler d-lg-none" type="button" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Desktop links -->
+      <div class="nav-links d-none d-lg-flex">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="work-with-us.html">Work&nbsp;With&nbsp;Us</a>
+        <a class="nav-link" href="blog.html">Blog</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+      </div>
+    </div>
+
+    <!-- Dropdown menu (mobile) -->
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="index.html">Home</a>
+      <a class="dropdown-item" href="about.html">About</a>
+      <a class="dropdown-item" href="contact.html">Contact</a>
+      <a class="dropdown-item" href="work-with-us.html">Work&nbsp;With&nbsp;Us</a>
+      <a class="dropdown-item" href="blog.html">Blog</a>
+      <a class="dropdown-item" href="gallery.html">Gallery</a>
+    </div>
+  </nav>
+</header>
+
+<main class="pt-5 mt-5">
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h1>Contact Us</h1>
+
+      <div class="row align-items-center">
+        <!-- Contact details -->
+        <div class="col-md-6">
+          <h3>Get in Touch</h3>
+          <p>Whether you have questions, suggestions, or would like to collaborate, we're here to listen and engage. Reach out to us through any of the methods below, and we'll get back to you as soon as possible.</p>
+          <ul class="list-unstyled">
+            <li><strong>Email:</strong> <a href="mailto:info@thecelticcouple.com" class="text-danger">info@thecelticcouple.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:07367292269" class="text-danger">07367292269</a></li>
+          </ul>
+          <a href="mailto:info@thecelticcouple.com" class="btn btn-custom-danger">Email&nbsp;Us</a>
+        </div>
+
+        <!-- Image -->
+        <div class="col-md-6 mb-4">
+          <img src="images/layby (1).jpg" alt="Contact The Celtic Couple" class="img-fluid">
+        </div>
+      </div>
+
+      <!-- Web3Forms form -->
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="https://web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-custom-danger">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ▸ FOOTER -->
+<footer class="footer py-4">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-4 mb-4">
+        <h5>Contact Us</h5>
+        <p>Email: <a href="mailto:info@thecelticcouple.com" class="text-decoration-none">info@thecelticcouple.com</a></p>
+        <p>Phone: <a href="tel:07367292269" class="text-decoration-none">07367292269</a></p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html"        class="text-decoration-none">Home</a></li>
+          <li><a href="about.html"        class="text-decoration-none">About</a></li>
+          <li><a href="contact.html"      class="text-decoration-none">Contact</a></li>
+          <li><a href="work-with-us.html" class="text-decoration-none">Work With Us</a></li>
+          <li><a href="blog.html"         class="text-decoration-none">Blog</a></li>
+          <li><a href="gallery.html"      class="text-decoration-none">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-12 mb-2">
+        <a href="privacy-policy.html" class="me-3 text-decoration-none">Privacy Policy</a>
+        <a href="cookie-policy.html"  class="text-decoration-none">Cookie Policy</a>
+      </div>
+      <div class="col-12 mb-2">
+        <p class="mb-0">Designed by <a href="https://cleandesignuk.com/" target="_blank" class="text-decoration-none">Clean Design UK</a></p>
+      </div>
+      <div class="col-12">
+        <p>&copy; 2025 The Celtic Couple. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap bundle & navbar toggle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelector('.navbar-toggler').addEventListener('click', () =>
+    document.querySelector('.dropdown-menu').classList.toggle('show'));
+  window.addEventListener('click', e => {
+    if (!document.querySelector('.navbar').contains(e.target)) {
+      document.querySelector('.dropdown-menu').classList.remove('show');
+    }
+  });
+</script>
+</body>
+</html>
