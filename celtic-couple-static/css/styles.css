@@ -1,0 +1,274 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    background-color: #f8f9fa; /* Light background for content */
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #4B0D0D; /* Deep Maroon */
+    --secondary-color: #FFFFFF; /* White */
+    --hover-color: #DCCCE8; /* Light Maroon */
+    --accent-color: #DCCCE8; /* For hover and accents */
+    --ko-fi-color: #DCCCE8; /* Light Purple for Ko-fi button */
+}
+
+/* -------------------------------------------------
+   NAVIGATION
+--------------------------------------------------*/
+.navbar {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar .logo {width: 60px; height: 60px;}
+.nav-links    {display: flex; gap: 20px;}
+.nav-links a  {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {color: var(--hover-color);}
+
+.cta-button {
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+.cta-button:hover {background-color: var(--primary-color); color: var(--secondary-color);}
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 60px;               /* Adjust if navbar height changes */
+    right: 20px;
+    width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: opacity .3s ease, visibility .3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+.dropdown-menu.show {display: flex; opacity: 1; visibility: visible;}
+.dropdown-item {
+    padding: 10px 20px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color .3s ease, color .3s ease;
+}
+.dropdown-item:hover {background-color: var(--hover-color); color: var(--primary-color);}
+.cta-button-dropdown {margin-top: 10px; text-align: center;}
+.dropdown-menu::-webkit-scrollbar {display: none;}
+.navbar-toggler {display: flex; align-items: center;}
+
+/* -------------------------------------------------
+   HERO BANNER
+--------------------------------------------------*/
+.hero-banner {
+       background: url("../images/herohome%20(1).jpg") no-repeat center center/cover;
+
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.hero-banner .container {position: relative; z-index: 1;}
+.hero-banner h1 {font-size: 48px; margin-bottom: 20px; letter-spacing: .5px;}
+.hero-banner p  {font-size: 24px; margin-bottom: 30px; letter-spacing: .3px;}
+
+.btn-custom-primary {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--secondary-color);
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color .3s ease;
+}
+.btn-custom-primary:hover {background-color: var(--hover-color); color: var(--primary-color);}
+
+/* -------------------------------------------------
+   FEATURED BLOG CARD
+--------------------------------------------------*/
+.top-blog-post .card {
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+.top-blog-post .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0,0,0,.2);
+}
+.top-blog-post .card-img-top {height: 400px; object-fit: cover;}
+.top-blog-post .card-title    {font-size: 24px; margin-bottom: 10px;}
+.top-blog-post .card-text     {font-size: 16px; color: #555;}
+
+/* -------------------------------------------------
+   GENERAL BLOG LINK (full-width banner)
+--------------------------------------------------*/
+.general-blog-link     {background-color: var(--primary-color); color: var(--secondary-color);}
+.general-blog-link h2  {color: var(--secondary-color);}
+.general-blog-link .btn-outline-light {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+.general-blog-link .btn-outline-light:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* -------------------------------------------------
+   IMAGE GALLERY
+--------------------------------------------------*/
+.image-gallery img           {border-radius: 8px;}
+.image-gallery .carousel-inner img {height: 300px; object-fit: cover;}
+.image-gallery .carousel-control-prev-icon,
+.image-gallery .carousel-control-next-icon {
+    background-color: rgba(0,0,0,.5);
+    border-radius: 50%;
+}
+
+/* Masonry on large screens */
+@media (min-width: 992px) {
+    .gallery-masonry .masonry {column-count: 3; column-gap: 15px;}
+    .gallery-masonry .masonry img {width: 100%; margin-bottom: 15px; display: inline-block;}
+}
+
+/* -------------------------------------------------
+   ABOUT / CONTACT / WORK WITH US
+--------------------------------------------------*/
+.about-us h3,
+.contact h3,
+.work-with-us h3 {font-size: 28px; margin-bottom: 15px;}
+
+.about-us p,
+.contact p,
+.work-with-us p {font-size: 16px; margin-bottom: 20px; color: #333;}
+
+.about-us .btn-outline-light,
+.work-with-us .btn-outline-light {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+.about-us .btn-outline-light:hover,
+.work-with-us .btn-outline-light:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.contact .btn-custom-primary {background-color: var(--primary-color);}
+.contact .btn-custom-primary:hover {background-color: var(--accent-color); color: var(--secondary-color);}
+
+/* -------------------------------------------------
+   FOOTER
+--------------------------------------------------*/
+.footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer .logo {width: 60px; height: 60px; margin-bottom: 20px;}
+.email-subscription {width: 100%; max-width: 400px; margin-bottom: 20px;}
+.email-subscription form {display: flex;}
+.email-subscription input {
+    flex: 1; padding: 10px; border: none; border-radius: 4px 0 0 4px; font-size: 14px;
+}
+.email-subscription input::placeholder {color: #a9a9a9;}
+.email-subscription button {
+    padding: 10px 20px; border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color); color: var(--primary-color);
+    font-size: 14px; border-radius: 0 4px 4px 0; cursor: pointer;
+    transition: background-color .3s ease, color .3s ease;
+}
+.email-subscription button:hover {background-color: var(--primary-color); color: var(--secondary-color);}
+
+.social-icons {display: flex; gap: 15px; margin-bottom: 20px;}
+.social-icons a {color: var(--secondary-color); font-size: 24px; transition: color .3s ease;}
+.social-icons a:hover {color: var(--hover-color);}
+
+.ko-fi-button-container {margin-bottom: 20px;}
+.ko-fi-button {
+    background-color: var(--ko-fi-color); color: var(--primary-color);
+    padding: 10px 20px; border-radius: 20px; text-decoration: none;
+    font-size: 14px; transition: background-color .3s ease, color .3s ease;
+}
+.ko-fi-button:hover {background-color: var(--primary-color); color: var(--secondary-color);}
+
+.privacy-policy  {margin-bottom: 20px;}
+.privacy-policy a{color: var(--secondary-color); font-size: 14px; text-decoration: none; transition: color .3s ease;}
+.privacy-policy a:hover {color: var(--hover-color);}
+.designed-by a     {color: var(--secondary-color); text-decoration: none; transition: color .3s ease;}
+.designed-by a:hover{color: var(--hover-color);}
+.footer .copyright {font-size: 14px; text-align: center;}
+
+/* -------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+--------------------------------------------------*/
+@media (max-width: 992px) {
+    .nav-links {display: none;}
+    .navbar-toggler {display: block;}
+}
+@media (max-width: 768px) {
+    .hero-banner              {height: 60vh;}
+    .hero-banner h1           {font-size: 36px;}
+    .hero-banner p            {font-size: 18px;}
+    .top-blog-post .card-img-top,
+    .image-gallery .carousel-inner img {height: 250px;}
+}
+@media (max-width: 576px) {
+    .footer {padding: 20px 10px;}
+    .email-subscription form {flex-direction: column;}
+    .email-subscription input,
+    .email-subscription button {width: 100%; border-radius: 4px;}
+    .email-subscription button {margin-top: 10px;}
+    .dropdown-menu {right: 10px; width: 90%;}
+}
