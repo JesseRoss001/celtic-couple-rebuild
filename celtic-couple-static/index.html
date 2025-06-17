@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="Welcome to The Celtic Couple's travel blog, celebrating Celtic heritage, culture, and adventures." />
-  <meta name="keywords"    content="Celtic, Travel, Blog, Heritage, Culture" />
-  <meta name="author"      content="The Celtic Couple" />
+  <meta name="keywords" content="Celtic, Travel, Blog, Heritage, Culture" />
+  <meta name="author" content="The Celtic Couple" />
 
   <!-- Open-Graph -->
   <meta property="og:title"       content="The Celtic Couple" />
@@ -16,37 +16,46 @@
   <title>Home – The Celtic Couple</title>
 
   <!-- Favicon & fonts -->
-  <link rel="icon" href="images/favicon%20(1).ico" type="image/x-icon" />
+  <link rel="icon" href="images/favicon (1).ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Bootstrap & icon packs via CDN -->
+  <!-- Bootstrap & icon packs -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
   <!-- Global CSS -->
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- page-specific tweaks -->
-<style>
-    /* -----------------------------------------
-       1.  Make headings in off-white sections red
-       -----------------------------------------*/
-    .offwhite-section .section-title {
-        color: #4B0D0D;         /* same deep-maroon as site brand */
-    }
 
-    /* -----------------------------------------
-       2.  Footer links – always white, never underline
-       -----------------------------------------*/
+  <!-- Page-specific tweaks -->
+  <style>
+    /* Section titles in off-white blocks */
+    .offwhite-section .section-title{color:#4B0D0D}
+
+    /* Footer links always white, no underline */
     .footer a,
     .footer a:visited,
     .footer a:hover,
-    .footer a:focus {
-        color: #FFFFFF !important;
-        text-decoration: none !important;
-    }
-</style>
+    .footer a:focus{color:#fff!important;text-decoration:none!important}
 
+    /* Cookie-consent banner */
+    #cookie-banner{
+      position:fixed;bottom:0;left:0;right:0;z-index:1050;
+      background:#4B0D0D;color:#fff;padding:1rem .75rem;font-size:.95rem;
+      display:none; /* shown via JS if consent not yet set */
+    }
+    #cookie-banner p{margin:0 0 .5rem}
+    #cookie-banner button{
+      margin-right:.5rem;border:2px solid #fff;background:transparent;
+      color:#fff;padding:.35rem 1.1rem;border-radius:4px;font-size:.9rem;
+      transition:background .3s,color .3s;
+    }
+    #cookie-banner button:hover{background:#DCCCE8;color:#4B0D0D;border-color:#DCCCE8}
+    @media(max-width:576px){
+      #cookie-banner{font-size:.85rem}
+      #cookie-banner button{margin-top:.5rem;width:100%}
+    }
+  </style>
 </head>
 
 <body>
@@ -54,16 +63,14 @@
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/celtic-couple-logo%20(1).jpg" class="logo me-2 border rounded" alt="The Celtic Couple logo" />
+        <img src="images/celtic-couple-logo (1).jpg" class="logo me-2 border rounded" alt="The Celtic Couple logo" />
         <span class="h5 mb-0 px-3 text-white d-none d-md-block">The Celtic Couple</span>
       </a>
 
-      <!-- mobile toggle -->
-      <button class="navbar-toggler d-lg-none" type="button" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+      <!-- Mobile toggle -->
+      <button class="navbar-toggler d-lg-none" type="button"><i class="fas fa-bars"></i></button>
 
-      <!-- desktop links -->
+      <!-- Desktop links -->
       <div class="nav-links d-none d-lg-flex">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="about.html">About</a>
@@ -74,7 +81,7 @@
       </div>
     </div>
 
-    <!-- dropdown shown on mobile -->
+    <!-- Dropdown (mobile) -->
     <div class="dropdown-menu">
       <a class="dropdown-item" href="index.html">Home</a>
       <a class="dropdown-item" href="about.html">About</a>
@@ -97,30 +104,26 @@
     </div>
   </section>
 
-  <!-- Featured post -->
-  <section id="top-blog-post" class="top-blog-post offwhite-section py-5">
-    <div class="container">
-      <h2 class="section-title text-center mb-4">Featured Blog Post</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-          <div class="card mb-4">
-            <img src="images/top_blog_placeholder%20(1).jpg" class="card-img-top" alt="Sample blog cover" />
-            <div class="card-body">
-              <h3 class="card-title">Sample Blog Post</h3>
-              <p class="card-text">This is a short teaser for the featured article. Replace it with your own summary text.</p>
-              <a href="blog.html" class="btn btn-custom-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Blog Coming Soon -->
+  <section class="offwhite-section py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-4">Blog Launching Soon!</h2>
+      <p class="fs-5 mb-3">
+        We’re busy polishing stories from Snowdonia to the Outer Hebrides.  
+        Check back later in <strong>2025</strong> for travel guides, Celtic history deep-dives and camper-van life tips.
+      </p>
+      <p class="mb-4">
+        In the meantime, explore our <a href="gallery.html" class="text-decoration-underline">gallery</a>.
+      </p>
+      <span class="badge bg-secondary fs-6 py-2 px-3">Stay tuned&nbsp;&mdash;&nbsp;new posts every fortnight after launch</span>
     </div>
   </section>
 
-  <!-- Link to all stories -->
+  <!-- Stories banner -->
   <section id="general-blog-link" class="general-blog-link red-section text-center py-5">
     <div class="container">
       <h2 class="section-title mb-4">Explore More Stories</h2>
-      <a href="blog.html" class="btn btn-outline-light btn-lg">Visit Our Blog</a>
+      <a href="gallery.html" class="btn btn-outline-light btn-lg">Visit Our Gallery</a>
     </div>
   </section>
 
@@ -129,18 +132,18 @@
     <div class="container">
       <h2 class="section-title text-center mb-4">Our Journeys</h2>
 
-      <!-- carousel on small/medium -->
+      <!-- Carousel (small/medium) -->
       <div class="gallery-carousel d-lg-none">
         <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/s-10%20(1).jpg" class="d-block w-100" alt="Gallery image 1">
+              <img src="images/s-10 (1).jpg" class="d-block w-100" alt="Gallery image 1">
             </div>
             <div class="carousel-item">
-              <img src="images/o-1%20(1).jpg" class="d-block w-100" alt="Gallery image 2">
+              <img src="images/o-1 (1).jpg" class="d-block w-100" alt="Gallery image 2">
             </div>
             <div class="carousel-item">
-              <img src="images/s-5%20(1).jpg" class="d-block w-100" alt="Gallery image 3">
+              <img src="images/s-5 (1).jpg" class="d-block w-100" alt="Gallery image 3">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
@@ -154,12 +157,12 @@
         </div>
       </div>
 
-      <!-- masonry on large+ -->
+      <!-- Masonry (large+) -->
       <div class="gallery-masonry d-none d-lg-block">
         <div class="row g-0 masonry">
-          <div class="col p-1"><img src="images/s-10%20(1).jpg" class="img-fluid" alt="Gallery image 1"></div>
-          <div class="col p-1"><img src="images/o-1%20(1).jpg"  class="img-fluid" alt="Gallery image 2"></div>
-          <div class="col p-1"><img src="images/s-5%20(1).jpg"  class="img-fluid" alt="Gallery image 3"></div>
+          <div class="col p-1"><img src="images/s-10 (1).jpg" class="img-fluid" alt="Gallery image 1"></div>
+          <div class="col p-1"><img src="images/o-1 (1).jpg"  class="img-fluid" alt="Gallery image 2"></div>
+          <div class="col p-1"><img src="images/s-5 (1).jpg"  class="img-fluid" alt="Gallery image 3"></div>
         </div>
       </div>
     </div>
@@ -171,14 +174,12 @@
       <h2 class="section-title text-center mb-4">About Us</h2>
       <div class="row align-items-center">
         <div class="col-md-6 mb-4">
-          <img src="images/about-us-home%20(1).jpg" alt="About us" class="img-fluid rounded">
+          <img src="images/about-us-home (1).jpg" alt="About us" class="img-fluid rounded">
         </div>
         <div class="col-md-6 text-white">
           <h3>Our Story</h3>
-          <p>We are Dave and Georgina Roberts who live near the outskirts of Snowdonia National Park in North West Wales. I was raised in the royal town of Caernarfon in Gwynedd, and Georgina is half Cornish and half Devonshire – her father's family were from St Ives in Cornwall and her mother's family were from Plymouth.</p>
-          <p>We first met in 2007 in a café. We had a coffee and got to know each other, then departed and got into our cars and drove away. The next day, I was driving to visit friends in Gloucester. I was on the A5 in Shropshire when I overtook a Renault Kangoo that looked similar to the one I saw in the café. I looked over and saw that the driver was Georgina. We both exchanged a look, and I pointed at her, gesturing, “Go and park in the next lay-by.” When I stopped, the first thing I said to her was, “Oh my God, I can't believe this.”</p>
-          <p>From that moment, the rest is history! Since then, our lifestyle has been geared around walking and cycling in the local countryside and travelling in our beloved Volkswagen campervan to various places in Europe and the islands of Scotland, such as the Outer Hebrides, Orkney, and Shetland.</p>
-          <p>We hope you enjoy following our journeys around the UK and Europe.</p>
+          <p>We are Dave and Georgina Roberts who live near the outskirts of Snowdonia National Park in North West Wales. Dave was raised in Caernarfon in Gwynedd, and Georgina is half Cornish and half Devonshire.</p>
+          <p>Our lifestyle revolves around walking, cycling and road-tripping in our VW campervan across Europe and the Scottish isles.</p>
           <a href="about.html" class="btn btn-outline-light">Learn More</a>
         </div>
       </div>
@@ -191,14 +192,14 @@
       <h2 class="section-title text-center mb-4">Get in Touch</h2>
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 order-md-2">
-          <img src="images/contact-us-home%20(1).jpg" alt="Get in touch" class="img-fluid rounded">
+          <img src="images/contact-us-home (1).jpg" alt="Get in touch" class="img-fluid rounded">
         </div>
         <div class="col-md-6 order-md-1">
           <h3>Contact Us</h3>
-          <p>Have questions or want to collaborate? Reach out through any of the methods below.</p>
+          <p>Questions, tips or collaboration ideas? Drop us a line!</p>
           <ul class="list-unstyled">
             <li>Email: <a href="mailto:info@thecelticcouple.com" class="text-danger">info@thecelticcouple.com</a></li>
-            <li>Phone: <a href="tel:07367292269" class="text-danger">07367292269</a></li>
+            <li>Phone: <a href="tel:07367292269" class="text-danger">073672&nbsp;92269</a></li>
           </ul>
           <a href="contact.html" class="btn btn-custom-primary">Contact Us</a>
         </div>
@@ -206,18 +207,17 @@
     </div>
   </section>
 
-  <!-- Work with us -->
+  <!-- Work With Us -->
   <section id="work-with-us" class="work-with-us red-section py-5">
     <div class="container">
       <h2 class="section-title text-center mb-4">Join the Community</h2>
       <div class="row align-items-center">
         <div class="col-md-6 mb-4">
-          <img src="images/work-with-us-home%20(1).jpg" alt="Work with us" class="img-fluid rounded">
+          <img src="images/work-with-us-home (1).jpg" alt="Work with us" class="img-fluid rounded">
         </div>
         <div class="col-md-6 text-white">
           <h3>Work With Us</h3>
-          <p>We value the support and engagement of our community. If you've enjoyed our journeys and have recommendations for places to visit, we'd love to hear your thoughts! Share your experiences, suggest must-see landmarks, or recommend brands that could enhance our travels.</p>
-          <p>Brands interested in collaborating or providing travel essentials at reduced rates are also welcome. Let's work together to make our adventures even more incredible!</p>
+          <p>Have product recommendations or travel suggestions? We’d love to collaborate.</p>
           <a href="work-with-us.html" class="btn btn-outline-light">Get Involved</a>
         </div>
       </div>
@@ -232,7 +232,7 @@
       <div class="col-md-4 mb-4">
         <h5>Contact Us</h5>
         <p>Email: <a href="mailto:info@thecelticcouple.com" class="text-decoration-none">info@thecelticcouple.com</a></p>
-        <p>Phone: <a href="tel:07367292269" class="text-decoration-none">07367292269</a></p>
+        <p>Phone: <a href="tel:07367292269" class="text-decoration-none">073672&nbsp;92269</a></p>
       </div>
 
       <div class="col-md-4 mb-4">
@@ -263,19 +263,66 @@
   </div>
 </footer>
 
-<!-- Bootstrap bundle (with Popper) -->
+<!-- ▸ Cookie-consent banner -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+    <p class="mb-md-0 me-md-3">
+      We use minimal cookies to make this site work and gather anonymous stats.&nbsp;
+      <a href="cookie-policy.html" class="text-decoration-underline text-white">Learn&nbsp;more</a>
+    </p>
+    <div class="d-flex flex-column flex-sm-row">
+      <button id="cookie-accept"  class="mb-2 mb-sm-0">Accept</button>
+      <button id="cookie-decline" class="">Decline</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Navbar toggle script -->
 <script>
-  document.querySelector('.navbar-toggler').addEventListener('click', () =>
-    document.querySelector('.dropdown-menu').classList.toggle('show')
-  );
-  window.addEventListener('click', e => {
-    if (!document.querySelector('.navbar').contains(e.target)) {
-      document.querySelector('.dropdown-menu').classList.remove('show');
-    }
+/* Navbar toggle (mobile) */
+document.querySelector('.navbar-toggler').addEventListener('click',()=>document.querySelector('.dropdown-menu').classList.toggle('show'));
+window.addEventListener('click',e=>{if(!document.querySelector('.navbar').contains(e.target)){document.querySelector('.dropdown-menu').classList.remove('show');}});
+
+/* Cookie-consent logic */
+(function(){
+  const banner  = document.getElementById('cookie-banner');
+  const accept  = document.getElementById('cookie-accept');
+  const decline = document.getElementById('cookie-decline');
+  const cookieName = 'cc_cookie_consent';
+
+  function setCookie(name,value,days){
+    const d = new Date(); d.setTime(d.getTime()+(days*24*60*60*1000));
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+  }
+  function getCookie(name){
+    return document.cookie.split(';').map(c=>c.trim()).find(c=>c.startsWith(name+'='))?.split('=')[1];
+  }
+  function hideBanner(){banner.style.display='none';}
+
+  /* Load privacy-friendly analytics only if accepted */
+  function loadAnalytics(){
+    /* Example placeholder:
+       const s=document.createElement('script');
+       s.src='https://YOUR_ANALYTICS.js';document.head.appendChild(s);
+    */
+  }
+
+  /* Check existing consent */
+  const consent = getCookie(cookieName);
+  if(!consent){banner.style.display='block';}
+  else if(consent==='accepted'){loadAnalytics();}
+
+  accept.addEventListener('click',()=>{
+    setCookie(cookieName,'accepted',180); /* 6 months */
+    hideBanner();loadAnalytics();
   });
+  decline.addEventListener('click',()=>{
+    setCookie(cookieName,'declined',180);
+    hideBanner();
+  });
+})();
 </script>
 </body>
 </html>
