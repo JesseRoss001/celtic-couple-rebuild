@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Read the latest posts from The Celtic Couple's travel blog, celebrating Celtic heritage and adventures." />
+  <meta name="keywords"    content="Blog, Celtic, Travel, Heritage, Culture, Adventures" />
+  <meta name="author"      content="The Celtic Couple" />
+
+  <!-- Open-Graph -->
+  <meta property="og:title"       content="Blog – The Celtic Couple" />
+  <meta property="og:description" content="Follow Dave & Georgina’s Celtic-inspired travels and road-trip tips." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://example.com/blog.html" />
+
+  <title>Blog – The Celtic Couple</title>
+
+  <!-- favicon, fonts, bootstrap, icons -->
+  <link rel="icon" href="images/favicon (1).ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Inline blog-page styles (kept verbatim, minus Django refs) -->
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400&family=Montserrat:wght@400;700&display=swap');
+  :root{--primary-color:#4B0D0D;--secondary-color:#fff;--hover-color:#DCCCE8;--accent-color:#DCCCE8;--offwhite-color:#f8f9fa}
+  body{margin:0;padding:0;background:var(--offwhite-color);color:#333}
+  /* Hero */
+  #blog-hero{position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;color:var(--secondary-color);padding:6rem 0;text-align:center}
+  #blog-hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5);z-index:0}
+  #blog-hero .container{position:relative;z-index:1}
+  #blog-hero h1{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;margin-bottom:1rem;text-shadow:2px 2px 6px rgba(0,0,0,.4)}
+  #blog-hero p.lead{max-width:700px;margin:0 auto 1.5rem;font-family:'Montserrat',sans-serif;font-size:1.2rem;line-height:1.6}
+  /* Main section */
+  #blog{padding:60px 0}
+  .blog-section-title{font-family:'Playfair Display',serif;font-size:32px;letter-spacing:1px;text-transform:uppercase;text-align:center;margin-bottom:40px;color:var(--primary-color);position:relative}
+  .blog-section-title::after{content:"";display:block;width:60px;height:3px;background:var(--primary-color);margin:10px auto 0;border-radius:3px}
+  .blog-card{display:flex;flex-direction:column;background:#fff;border:1px solid #eee;border-radius:8px;overflow:hidden;transition:.3s;margin-bottom:30px}
+  .blog-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+  .blog-card img{width:100%;height:220px;object-fit:cover;transition:.3s}
+  .blog-card:hover img{transform:scale(1.02)}
+  .blog-card-content{flex:1;display:flex;flex-direction:column;padding:1.5rem}
+  .blog-post-date{font-family:'Lora',serif;font-size:.9rem;color:#888;margin-bottom:8px}
+  .blog-card-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin:0 0 10px}
+  .blog-card-title a{text-decoration:none;color:var(--primary-color);border-bottom:2px solid transparent;transition:.3s}
+  .blog-card-title a:hover{color:var(--hover-color);border-bottom-color:var(--hover-color)}
+  .blog-card-excerpt{margin-top:10px;font-family:'Montserrat',sans-serif;font-size:.95rem;line-height:1.6;color:#555;flex:1 1 auto}
+  .read-more-btn{margin-top:auto;background:var(--primary-color);color:#fff;border:2px solid var(--primary-color);font-family:'Montserrat',sans-serif;padding:8px 20px;font-size:.9rem;text-transform:uppercase;letter-spacing:.5px;text-decoration:none;transition:.3s;align-self:flex-start}
+  .read-more-btn:hover{background:var(--hover-color);border-color:var(--hover-color)}
+  /* No-post notice */
+  .no-posts{font-family:'Montserrat',sans-serif;font-size:1.1rem;text-align:center;color:#555;margin-top:30px}
+  @media(max-width:768px){
+    #blog-hero h1{font-size:2rem}
+    .blog-card img{height:180px}
+    .blog-card-title{font-size:1.1rem}
+    .blog-card-excerpt{font-size:.9rem}
+    .read-more-btn{font-size:.85rem;padding:6px 16px}
+  }
+  </style>
+</head>
+<body>
+
+<!-- ▸ NAVBAR -->
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/celtic-couple-logo (1).jpg" class="logo me-2 border rounded" alt="The Celtic Couple logo">
+        <span class="h5 mb-0 px-3 text-white d-none d-md-block">The Celtic Couple</span>
+      </a>
+      <button class="navbar-toggler d-lg-none" type="button" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+      <div class="nav-links d-none d-lg-flex">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="work-with-us.html">Work&nbsp;With&nbsp;Us</a>
+        <a class="nav-link" href="blog.html">Blog</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+      </div>
+    </div>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="index.html">Home</a>
+      <a class="dropdown-item" href="about.html">About</a>
+      <a class="dropdown-item" href="contact.html">Contact</a>
+      <a class="dropdown-item" href="work-with-us.html">Work&nbsp;With&nbsp;Us</a>
+      <a class="dropdown-item" href="blog.html">Blog</a>
+      <a class="dropdown-item" href="gallery.html">Gallery</a>
+    </div>
+  </nav>
+</header>
+
+<main class="pt-5 mt-5">
+
+  <!-- HERO (re-uses gallery image s-10 (1).jpg) -->
+  <section id="blog-hero" style="background-image:url('images/s-10 (1).jpg');">
+    <div class="container">
+      <h1>Welcome to Our Adventures</h1>
+      <p class="lead">
+        Stories of scenic road trips, Celtic festivals and off-the-beaten-path discoveries—
+        lovingly documented for you to enjoy and plan your own journeys.
+      </p>
+      <p class="lead"><strong>Dave&nbsp;&amp;&nbsp;Georgina</strong></p>
+    </div>
+  </section>
+
+  <!-- MAIN BLOG AREA -->
+  <section id="blog" class="offwhite-section">
+    <div class="container">
+      <h2 class="blog-section-title">Coming Soon in 2025</h2>
+
+      <!-- Launch announcement cards -->
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="blog-card">
+            <img src="images/s-1 (1).jpg" alt="Blog Launch">
+            <div class="blog-card-content">
+              <div class="blog-post-date">Launching&nbsp;Autumn&nbsp;2025</div>
+              <h5 class="blog-card-title">
+                <a href="#">Our First Road-Trip Series</a>
+              </h5>
+              <p class="blog-card-excerpt">
+                Follow our maiden blog series as we trace Celtic coastlines, discover hidden
+                harbours and sample local flavours across Wales, Cornwall and Brittany.
+              </p>
+              <a href="gallery.html" class="read-more-btn">See Gallery</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="blog-card">
+            <img src="images/s-5 (1).jpg" alt="Behind the Scenes">
+            <div class="blog-card-content">
+              <div class="blog-post-date">Behind&nbsp;the&nbsp;Scenes</div>
+              <h5 class="blog-card-title">
+                <a href="#">Campervan Life Tips</a>
+              </h5>
+              <p class="blog-card-excerpt">
+                From packing hacks to campsite etiquette—get practical advice we’ve learned
+                during years of van-life across remote Celtic landscapes.
+              </p>
+              <a href="gallery.html" class="read-more-btn">Photo Moments</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4 mx-md-auto">
+          <div class="blog-card">
+            <img src="images/o-1 (1).jpg" alt="Heritage Deep Dive">
+            <div class="blog-card-content">
+              <div class="blog-post-date">Heritage Features</div>
+              <h5 class="blog-card-title">
+                <a href="#">Celtic Myths &amp; Music</a>
+              </h5>
+              <p class="blog-card-excerpt">
+                Explore the folklore, traditional tunes and historic landmarks that shape the
+                modern Celtic identity—from Wales to the far-flung Shetland Isles.
+              </p>
+              <a href="gallery.html" class="read-more-btn">Discover Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- No actual posts yet -->
+      <p class="no-posts">
+        The full blog launches later this year. In the meantime, wander through our&nbsp;
+        <a href="gallery.html" class="text-decoration-underline">Gallery</a>
+        for a visual taste of the journeys to come!
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ▸ FOOTER -->
+<footer class="footer py-4">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-4 mb-4">
+        <h5>Contact Us</h5>
+        <p>Email: <a href="mailto:info@thecelticcouple.com" class="text-decoration-none">info@thecelticcouple.com</a></p>
+        <p>Phone: <a href="tel:07367292269" class="text-decoration-none">07367292269</a></p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html"        class="text-decoration-none">Home</a></li>
+          <li><a href="about.html"        class="text-decoration-none">About</a></li>
+          <li><a href="contact.html"      class="text-decoration-none">Contact</a></li>
+          <li><a href="work-with-us.html" class="text-decoration-none">Work With Us</a></li>
+          <li><a href="blog.html"         class="text-decoration-none">Blog</a></li>
+          <li><a href="gallery.html"      class="text-decoration-none">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-12 mb-2">
+        <a href="privacy-policy.html" class="me-3 text-decoration-none">Privacy Policy</a>
+        <a href="cookie-policy.html"  class="text-decoration-none">Cookie Policy</a>
+      </div>
+      <div class="col-12 mb-2">
+        <p class="mb-0">Designed by <a href="https://cleandesignuk.com/" target="_blank" class="text-decoration-none">Clean Design UK</a></p>
+      </div>
+      <div class="col-12">
+        <p>&copy; 2025 The Celtic Couple. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap bundle & navbar toggle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelector('.navbar-toggler').addEventListener('click', () =>
+    document.querySelector('.dropdown-menu').classList.toggle('show'));
+  window.addEventListener('click', e=>{
+    if(!document.querySelector('.navbar').contains(e.target)){
+      document.querySelector('.dropdown-menu').classList.remove('show');
+    }
+  });
+</script>
+</body>
+</html>
