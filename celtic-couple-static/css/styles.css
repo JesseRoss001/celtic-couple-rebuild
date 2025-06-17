@@ -272,3 +272,62 @@ body {
     .email-subscription button {margin-top: 10px;}
     .dropdown-menu {right: 10px; width: 90%;}
 }
+/* =========================================================
+   COLOUR RESET — CONSISTENT SECTION & FOOTER PALETTE
+   =========================================================*/
+
+/* 1. RED SECTIONS
+   ---------------------------------------------------------*/
+.red-section {
+    background-color: var(--primary-color) !important;  /* deep maroon */
+    color: var(--secondary-color) !important;           /* white text  */
+}
+
+/* keep every heading inside red sections white as well */
+.red-section h1,
+.red-section h2,
+.red-section h3,
+.red-section .section-title {color: var(--secondary-color) !important;}
+
+/* 2. OFF-WHITE SECTIONS
+   ---------------------------------------------------------*/
+.offwhite-section {
+    background-color: #f8f9fa !important;               /* light grey  */
+    color: #000000 !important;                          /* black body  */
+}
+
+/* headings in off-white areas = brand red */
+.offwhite-section h1,
+.offwhite-section h2,
+.offwhite-section h3,
+.offwhite-section .section-title {color: var(--primary-color) !important;}
+
+/* 3. FOOTER LINK CLEAN-UP
+   ---------------------------------------------------------*/
+.footer a,
+.footer a:visited,
+.footer a:hover,
+.footer a:focus {
+    color: var(--secondary-color) !important;           /* always white */
+    text-decoration: none !important;                   /* never underline */
+}
+
+/* optional: keep hover colour white too – remove if you
+   prefer the subtle hover accent from earlier */
+.footer a:hover {color: var(--secondary-color) !important;}
+/* =========================================================
+   ABSOLUTE FINAL OVERRIDE – RED SECTIONS
+   =========================================================*/
+.red-section,
+.red-section * {
+    color: var(--secondary-color) !important;   /* pure white */
+}
+
+/* keep outlined buttons usable */
+.red-section .btn-outline-light {
+    border-color: var(--secondary-color) !important;
+}
+.red-section .btn-outline-light:hover {
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+}
