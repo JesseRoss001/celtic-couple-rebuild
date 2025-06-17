@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery – The Celtic Couple</title>
+
+  <!-- favicon & fonts -->
+  <link rel="icon" href="images/favicon (1).ico">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- your global file -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- page-specific styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&family=Montserrat:wght@400;700&display=swap');
+    :root{--primary:#4B0D0D;--white:#fff;--off:#f8f9fa}
+    body{margin:0;background:var(--off);font-family:Montserrat,sans-serif;color:#333}
+    .image-gallery{padding:60px 20px}
+    .section-title{font-family:'Playfair Display',serif;font-size:2rem;text-align:center;color:var(--primary)}
+    .gallery-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+    .gallery-card{position:relative;overflow:hidden;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,.1);aspect-ratio:1/1}
+    .gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+    .gallery-card:hover img{transform:scale(1.05)}
+    .overlay{position:absolute;inset:0;background:rgba(75,13,13,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
+    .gallery-card:hover .overlay{opacity:1}
+    .overlay h3{color:var(--white);font-family:'Playfair Display',serif;font-size:1.5rem;text-align:center;padding:0 10px}
+    @media(max-width:768px){.overlay{opacity:1}.section-title{font-size:1.8rem}}
+  </style>
+</head>
+<body>
+
+<header class="fixed-top red-section">
+  <nav class="navbar container-fluid">
+    <a class="navbar-brand d-flex align-items-center text-white" href="index.html">
+      <img src="images/celtic-couple-logo (1).jpg" class="logo me-2 border rounded" alt="logo">
+      <span class="h5 mb-0 px-3 d-none d-md-block">The Celtic Couple</span>
+    </a>
+  </nav>
+</header>
+
+<main class="pt-5 mt-5">
+  <section class="image-gallery">
+    <div class="container">
+      <h2 class="section-title mb-4">Our Journeys</h2>
+      <div class="gallery-cards">
+
+        <a href="albums/album_shetland_2024.html" class="gallery-card">
+          <img src="images/sh-24 (1).jpg" alt="Shetland 2024">
+          <div class="overlay"><h3>Shetland 2024 Road Trip</h3></div>
+        </a>
+
+        <a href="albums/album_orkney_2021.html" class="gallery-card">
+          <img src="images/o-1 (1).jpg" alt="Orkney 2021">
+          <div class="overlay"><h3>Orkney 2021</h3></div>
+        </a>
+
+        <a href="albums/album_shetland_2021.html" class="gallery-card">
+          <img src="images/s-1 (1).jpg" alt="Shetland 2021">
+          <div class="overlay"><h3>Shetland 2021</h3></div>
+        </a>
+
+        <a href="albums/album_normandy_beaches_2023.html" class="gallery-card">
+          <img src="images/n-7 (1).jpg" alt="Normandy Beaches">
+          <div class="overlay"><h3>Normandy Beaches 2023</h3></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer py-4"><div class="container text-center">&copy; 2025 The Celtic Couple</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>
