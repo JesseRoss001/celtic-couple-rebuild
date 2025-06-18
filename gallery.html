@@ -1,53 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- ====== Meta ====== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Browse photo albums from The Celtic Couple’s travels across the Celtic nations and beyond." />
+  <meta name="keywords" content="Celtic, Travel, Gallery, Outer Hebrides, Shetland, Orkney" />
+  <meta name="author" content="The Celtic Couple" />
+
+  <!-- Open-Graph -->
+  <meta property="og:title"       content="Gallery – The Celtic Couple" />
+  <meta property="og:description" content="See highlights of our camper-van adventures, hikes and cultural discoveries." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://example.com/gallery.html" />
+
   <title>Gallery – The Celtic Couple</title>
 
-  <!-- favicon & fonts -->
-  <link rel="icon" href="images/favicon (1).ico">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- ====== Favicon & Fonts ====== -->
+  <link rel="icon" href="images/favicon (1).ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ====== Frameworks & Icons ====== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- ====== Global CSS ====== -->
+  <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- page-specific styles -->
+  <!-- ====== Page-specific & sticky-footer tweaks ====== -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&family=Montserrat:wght@400;700&display=swap');
-    :root{--primary:#4B0D0D;--white:#fff;--off:#f8f9fa}
-    body{margin:0;background:var(--off);font-family:Montserrat,sans-serif;color:#333}
-    .image-gallery{padding:60px 20px}
-    .section-title{font-family:'Playfair Display',serif;font-size:2rem;text-align:center;color:var(--primary)}
-    .gallery-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
-    .gallery-card{position:relative;overflow:hidden;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,.1);aspect-ratio:1/1}
-    .gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-    .gallery-card:hover img{transform:scale(1.05)}
-    .overlay{position:absolute;inset:0;background:rgba(75,13,13,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.3s}
-    .gallery-card:hover .overlay{opacity:1}
-    .overlay h3{color:var(--white);font-family:'Playfair Display',serif;font-size:1.5rem;text-align:center;padding:0 10px}
-    @media(max-width:768px){.overlay{opacity:1}.section-title{font-size:1.8rem}}
+    /* --- Sticky footer --- */
+    html,body{height:100%;}
+    body{display:flex;flex-direction:column;margin:0;}
+    main{flex:1;}
+
+    /* --- Palette & typography --- */
+    :root{--primary:#4B0D0D;--white:#fff;--off:#f8f9fa;}
+    body{background:var(--off);font-family:'Open Sans',sans-serif;color:#333;}
+
+    /* --- Gallery grid --- */
+    .image-gallery{padding:4rem 0;}
+    .section-title{color:var(--primary);font-weight:700;text-align:center;margin-bottom:2.5rem;}
+    .gallery-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;}
+    .gallery-card{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,.12);aspect-ratio:1/1;}
+    .gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+    .gallery-card:hover img{transform:scale(1.06);}
+    .overlay{position:absolute;inset:0;background:rgba(75,13,13,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .35s;}
+    .gallery-card:hover .overlay{opacity:1;}
+    .overlay h3{color:var(--white);text-align:center;font-size:1.4rem;padding:0 1rem;}
+
+    /* --- Navbar (inherit global look) --- */
+    header.fixed-top{background:var(--primary);}
+    .navbar-brand span,.nav-link{color:var(--white) !important;}
+    .nav-link:hover{opacity:.8;}
+    .navbar-toggler{border:0;color:var(--white);font-size:1.35rem;}
+
+    /* --- Footer --- */
+    .footer{background:var(--primary);color:var(--white);}
+    .footer a{color:var(--white) !important;text-decoration:none !important;}
+    .footer h5{font-weight:600;margin-bottom:1rem;}
+
+    /* --- Cookie banner (same as other pages) --- */
+    #cookie-banner{
+      position:fixed;bottom:0;left:0;right:0;z-index:1050;
+      background:var(--primary);color:var(--white);padding:1rem .75rem;font-size:.95rem;
+      display:none;
+    }
+    #cookie-banner p{margin:0 0 .5rem;}
+    #cookie-banner button{
+      margin-right:.5rem;border:2px solid #fff;background:transparent;
+      color:#fff;padding:.35rem 1.1rem;border-radius:4px;font-size:.9rem;
+      transition:background .3s,color .3s;
+    }
+    #cookie-banner button:hover{background:var(--off);color:var(--primary);border-color:var(--off);}
+    @media(max-width:576px){
+      #cookie-banner{font-size:.85rem;}
+      #cookie-banner button{margin-top:.5rem;width:100%;}
+    }
   </style>
 </head>
+
 <body>
 
-<!-- ▸ NAVBAR -->
-<header class="fixed-top red-section">
-  <nav class="navbar container-fluid">
-    <a class="navbar-brand d-flex align-items-center text-white" href="index.html">
-      <img src="images/celtic-couple-logo (1).jpg" class="logo me-2 border rounded" alt="logo">
-      <span class="h5 mb-0 px-3 d-none d-md-block">The Celtic Couple</span>
-    </a>
+<!-- ====== NAVBAR ====== -->
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/celtic-couple-logo (1).jpg" class="logo me-2 border rounded" alt="The Celtic Couple logo" />
+        <span class="h5 mb-0 px-3 d-none d-md-block">The Celtic Couple</span>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="navbar-toggler" type="button">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Desktop links -->
+      <div class="nav-links d-none d-lg-flex">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="work-with-us.html">Work&nbsp;With&nbsp;Us</a>
+        <a class="nav-link" href="blog.html">Blog</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+      </div>
+    </div>
+
+    <!-- Dropdown (mobile) -->
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="index.html">Home</a>
+      <a class="dropdown-item" href="about.html">About</a>
+      <a class="dropdown-item" href="contact.html">Contact</a>
+      <a class="dropdown-item" href="work-with-us.html">Work&nbsp;With&nbsp;Us</a>
+      <a class="dropdown-item" href="blog.html">Blog</a>
+      <a class="dropdown-item" href="gallery.html">Gallery</a>
+    </div>
   </nav>
 </header>
 
+<!-- ====== MAIN CONTENT ====== -->
 <main class="pt-5 mt-5">
+
+  <!-- Gallery -->
   <section class="image-gallery">
     <div class="container">
-      <h2 class="section-title mb-4">Our Journeys</h2>
+      <h2 class="section-title">Our Journeys</h2>
 
       <div class="gallery-cards">
 
@@ -60,7 +138,7 @@
         <!-- Existing albums -->
         <a href="albums/album_shetland_2024.html" class="gallery-card">
           <img src="images/sh-24 (1).jpg" alt="Shetland 2024">
-          <div class="overlay"><h3>Shetland 2024 Road Trip</h3></div>
+          <div class="overlay"><h3>Shetland 2024 Road&nbsp;Trip</h3></div>
         </a>
 
         <a href="albums/album_orkney_2021.html" class="gallery-card">
@@ -74,7 +152,7 @@
         </a>
 
         <a href="albums/album_normandy_beaches_2023.html" class="gallery-card">
-          <img src="images/n-7 (1).jpg" alt="Normandy Beaches">
+          <img src="images/n-7 (1).jpg" alt="Normandy Beaches 2023">
           <div class="overlay"><h3>Normandy Beaches 2023</h3></div>
         </a>
 
@@ -83,10 +161,101 @@
   </section>
 </main>
 
+<!-- ====== FOOTER ====== -->
 <footer class="footer py-4">
-  <div class="container text-center">&copy; 2025 The Celtic Couple</div>
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-4 mb-4">
+        <h5>Contact Us</h5>
+        <p>Email: <a href="mailto:info@thecelticcouple.com">info@thecelticcouple.com</a></p>
+        <p>Phone: <a href="tel:07367292269">073672&nbsp;92269</a></p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="work-with-us.html">Work With Us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-12 mb-2">
+        <a href="privacy-policy.html" class="me-3">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+      </div>
+      <div class="col-12 mb-2">
+        <p class="mb-0">Designed by <a href="https://cleandesignuk.com/" target="_blank">Clean Design UK</a></p>
+      </div>
+      <div class="col-12">
+        <p class="mb-0">&copy; 2025 The Celtic Couple. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
 </footer>
 
+<!-- ▸ Cookie-consent banner -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent banner">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+    <p class="mb-md-0 me-md-3">
+      We use minimal cookies to make this site work and gather anonymous stats.&nbsp;
+      <a href="cookie-policy.html" class="text-decoration-underline text-white">Learn&nbsp;more</a>
+    </p>
+    <div class="d-flex flex-column flex-sm-row">
+      <button id="cookie-accept"  class="mb-2 mb-sm-0">Accept</button>
+      <button id="cookie-decline">Decline</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Scripts ====== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* Navbar toggle (mobile) */
+document.querySelector('.navbar-toggler')
+  .addEventListener('click',()=>document.querySelector('.dropdown-menu').classList.toggle('show'));
+window.addEventListener('click',e=>{
+  if(!document.querySelector('.navbar').contains(e.target)){
+    document.querySelector('.dropdown-menu').classList.remove('show');
+  }
+});
+
+/* Cookie-consent logic (same as other pages) */
+(function(){
+  const banner  = document.getElementById('cookie-banner');
+  const accept  = document.getElementById('cookie-accept');
+  const decline = document.getElementById('cookie-decline');
+  const cookieName = 'cc_cookie_consent';
+
+  function setCookie(name,value,days){
+    const d=new Date();d.setTime(d.getTime()+days*24*60*60*1000);
+    document.cookie=name+'='+value+';expires='+d.toUTCString()+';path=/;SameSite=Lax';
+  }
+  function getCookie(name){
+    return document.cookie.split(';').map(c=>c.trim())
+            .find(c=>c.startsWith(name+'='))?.split('=')[1];
+  }
+  function hideBanner(){banner.style.display='none';}
+
+  /* Example placeholder for analytics loader */
+  function loadAnalytics(){ /* Add your analytics script here if needed */ }
+
+  const consent=getCookie(cookieName);
+  if(!consent){banner.style.display='block';}
+  else if(consent==='accepted'){loadAnalytics();}
+
+  accept.addEventListener('click',()=>{
+    setCookie(cookieName,'accepted',180);hideBanner();loadAnalytics();
+  });
+  decline.addEventListener('click',()=>{
+    setCookie(cookieName,'declined',180);hideBanner();
+  });
+})();
+</script>
 </body>
 </html>
