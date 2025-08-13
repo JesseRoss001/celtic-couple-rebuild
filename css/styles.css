@@ -331,3 +331,9 @@ body {
     background-color: var(--secondary-color) !important;
     color: var(--primary-color) !important;
 }
+
+@media (max-width: 992px) {
+  #contact .btn-custom-danger {
+    margin-bottom: 20px; /* More gap before the image */
+  }
+}
